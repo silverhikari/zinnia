@@ -42,6 +42,10 @@ float minimum_distance(const Node *first, const Node *last,
 
   const float a = last->x - first->x;
   const float b = last->y - first->y;
+
+  if (a * a + b * b == 0)
+    return 0.0;
+
   const float c = static_cast<double>(last->y * first->x)
     - static_cast<double>(last->x * first->y);
 
